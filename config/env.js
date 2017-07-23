@@ -3,3 +3,5 @@ module.exports = {
   port: process.env.PORT || 3000,
   secret: process.env.SESSION_SECRET || 'shh it\'s a secret'
 };
+
+// nothing more to add to this file
