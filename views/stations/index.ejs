@@ -1,0 +1,24 @@
+<h1>Stations</h1>
+
+<a href="/stations/new" class="btn btn-primary">Add</a>
+
+<div class="row">
+  <% stations.forEach((station) => { %>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-block">
+          <a href="/stations/<%= station.id %>">
+            <h4 class="card-title"><%= station.name %></h4>
+          </a>
+          <p class="card-text">Zone <%= station.zone %></p>
+
+          <a href="/stations/<%= station.id %>/edit" class="btn btn-primary">Edit</a>
+          <form method="POST" action="/stations/<%= station.id %>">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

@@ -1,0 +1,30 @@
+<h1><%= station.name %></h1>
+
+<h2>Zone</h2>
+<p><%= station.zone %></p>
+
+<h3>Lines</h3>
+<p><%= station.lines %></p>
+
+<h4>Comments</h4>
+
+<form action="/stations/<%= station._id %>" method="post">
+  <input type="text" name="body">
+  <input type="submit" value="Post Comment">
+</form>
+
+<ul>
+  <% station.comments.forEach(comment => { %>
+    <li>
+      <h5><a href="/users/<%= comment.user._id %>"><%= comment.user.username %></a></h5>
+      <p><%= comment.body %></p>
+
+      <% if (comment.user.id === locals.user.id || station.createdBy.id === locals.user.id ) { %>
+        <form action="/stations/<%= station._id %>/comments/<%= comment._id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input class="btn btn-danger" type="submit" value="Delete Comment">
+        </form>
+      <% } %>
+    </li>
+  <% }) %>
+</ul>

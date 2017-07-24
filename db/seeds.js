@@ -38,6 +38,14 @@ User
       'District',
       'Jubilee'
     ]
+  }, {
+    name: 'Oxford Circus',
+    zone: '1',
+    lines: [
+      'Bakerloo',
+      'Central',
+      'Victoria'
+    ]
   }]);
 })
 

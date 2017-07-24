@@ -3,26 +3,27 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse" aria-controls="collapse" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" href="/">iMovieDB</a>
+    <a class="navbar-brand" href="/">Skedaddle</a>
 
     <div class="collapse navbar-collapse" id="collapse">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-          <a class="nav-link" href="/films">Films</a>
+          <a class="nav-link" href="/stations">Stations</a>
         </li>
         <% if (locals.isLoggedIn) { %>
+
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Hello <%= locals.user.firstname %></a>
+            <a class="nav-link" href="#">Logged in as <%= locals.user.firstname %> <%= locals.user.lastname %></a>
           </li>
         <% } else { %>
           <li class="nav-item">
             <a class="nav-link" href="/login">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Register</a>
+            <a class="nav-link" href="/register">Create an account</a>
           </li>
         <% } %>
       </ul>

@@ -1,10 +1,10 @@
-<h1><%= user.firstname user.lastname %></h1>
+<h1><%= user.firstname %> <%= user.lastname %></h1>
 <h2><%= user.username %></h2>
 <h2><%= user.email %></h2>
 
 <h3>Stations</h3>
 <ul>
-  <% stations.forEach(film => { %>
+  <% stations.forEach(station => { %>
     <li><a href="/stations/<%= station._id %>"><%= station.name %></a></li>
   <% }); %>
 </ul>
