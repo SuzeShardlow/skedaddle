@@ -27,8 +27,8 @@ router.route('/stations')
   .get(stations.index)
   .post(secureRoute, stations.create);
 
-router.route('/stations/new')
-  .get(secureRoute, stations.new);
+// router.route('/stations/new')
+//   .get(secureRoute, stations.new);
 
 router.route('/stations/:id')
   .get(stations.show)
@@ -36,8 +36,8 @@ router.route('/stations/:id')
   .put(secureRoute, stations.update)
   .delete(secureRoute, stations.delete);
 
-router.route('/stations/:id/edit')
-  .get(stations.edit);
+// router.route('/stations/:id/edit')
+//   .get(stations.edit);
 
 router.route('/stations/:stationId/comments/:commentId')
   .delete(comments.delete);

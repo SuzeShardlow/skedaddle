@@ -16,7 +16,7 @@ function commentsCreate(req, res) {
 
 function commentsDelete(req, res) {
   Station
-  .findById(req.params.filmId)
+  .findById(req.params.stationId)
   .exec()
   .then(station => {
     const comment = station.comments.id(req.params.commentId);
