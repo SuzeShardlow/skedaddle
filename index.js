@@ -51,19 +51,7 @@ app.use((req, res, next) => {
       }
 
       req.session.userId = user._id;
-
       req.user = user;
-
-      // const req {
-      //   status: 200,
-      //   url: 'localhost:3000/films',
-      //   user: {
-      //     username: 'rgowan',
-      //     email: 'rane.gowan@gmail.com',
-      //     password: '40r8ur9g84y30ryf94yrf04y0fy4f',
-      //     _id: '8yy4yrf0cy30ry3d73'
-      //   }
-      // }
 
       res.locals.user = user;
       res.locals.isLoggedIn = true;
