@@ -1,12 +1,25 @@
-console.log('client log!');
+$(document).ready(function(){
+
+  $('.location').click = this.value = '';
 
 
-$('#journeySubmisssion').on('click', function() {
-  var startPoint = $('.input1').val();
-  var endPoint = $('.input2').val();
+  console.log('client log!');
 
-  $.get(`https://api.tfl.gov.uk/Journey/JourneyResults/${startPoint}/to/${endPoint}`)
-  .then(data => {
-    console.log(data);
+  var startPoint;
+  var endPoint;
+
+
+  $('#journeydets').submit(function(e) {
+    startPoint = $('#origin').val();
+    endPoint = $('#destination').val();
+    e.preventDefault();
+
+    console.log(startPoint, endPoint);
+
+    $.
+    get('https://api.tfl.gov.uk/Journey/JourneyResults/${startPoint}/to/${endPoint}')
+    .then(data => {
+      console.log(data);
+    });
   });
 });

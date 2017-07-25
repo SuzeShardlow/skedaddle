@@ -1,4 +1,4 @@
-<h1>Homepage</h1>
+<h1>Plan your journey</h1>
 
 <div class="row">
   <% users.forEach((user) => { %>
@@ -15,3 +15,10 @@
     </div>
   <% }) %>
 </div>
+
+
+<form id="journeydets">
+  <input type="text" class="location" id="origin" placeholder="Travel from">
+  <input type="text" class="location" id="destination" placeholder="Travel to">
+  <input type="submit" value="See your options">
+</form>
