@@ -6,7 +6,8 @@ function commentsCreate(req, res) {
   .exec()
   .then(station => {
     req.body.user = req.user._id;
-
+    const date = new Date();
+    req.body.timeCreated = date;
     station.comments.push(req.body);
     station.save();
 

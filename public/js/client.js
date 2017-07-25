@@ -1,1 +1,1 @@
-"use strict";console.log("client log!");
+"use strict";console.log("client log!"),$("#journeySubmisssion").on("click",function(){var o=$(".input1").val(),n=$(".input2").val();$.get("https://api.tfl.gov.uk/Journey/JourneyResults/"+o+"/to/"+n).then(function(o){console.log(o)})});

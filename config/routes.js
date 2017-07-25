@@ -27,6 +27,9 @@ router.route('/stations')
   .get(stations.index)
   .post(secureRoute, stations.create);
 
+// router.route('/journeyplanner')
+//   .get(statics.journeyplanner);
+
 // router.route('/stations/new')
 //   .get(secureRoute, stations.new);
 

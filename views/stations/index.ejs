@@ -1,7 +1,5 @@
 <h1>Stations</h1>
 
-<a href="/stations/new" class="btn btn-primary">Add</a>
-
 <div class="container row">
   <% stations.forEach((station) => { %>
     <div class="col-lg-4 col-md-4">
@@ -10,7 +8,7 @@
           <a href="/stations/<%= station.id %>">
             <h4 class="card-title"><%= station.name %></h4>
           </a>
-          <p class="card-text">Zone <%= station.zone %></p>
+          <p class="card-text">Zone <%= station.zones %></p>
 
           <a href="/stations/<%= station.id %>/edit" class="btn btn-primary">Edit</a>
           <form method="POST" action="/stations/<%= station.id %>">

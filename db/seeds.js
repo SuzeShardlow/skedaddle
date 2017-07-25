@@ -32,20 +32,24 @@ User
   return Station
   .create([{
     name: 'Westminster',
-    zone: '1',
-    lines: [
-      'Circle',
-      'District',
-      'Jubilee'
-    ]
+    latitude: 51.50132,
+    longitude: -0.124861,
+    lines:
+    [ { id: 'jubilee', name: 'Jubilee' },
+    { id: 'district', name: 'District' },
+    { id: 'circle', name: 'Circle' } ],
+    naptan: '940GZZLUWSM',
+    zones: [ '1' ]
   }, {
     name: 'Oxford Circus',
-    zone: '1',
-    lines: [
-      'Bakerloo',
-      'Central', 
-      'Victoria'
-    ]
+    latitude: 51.515224,
+    longitude: -0.141903,
+    lines:
+    [ { id: 'victoria', name: 'Victoria' },
+    { id: 'bakerloo', name: 'Bakerloo' },
+    { id: 'central', name: 'Central' } ],
+    naptan: '940GZZLUOXC',
+    zones: [ '1' ]
   }]);
 })
 

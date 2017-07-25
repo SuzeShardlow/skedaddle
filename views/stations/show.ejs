@@ -1,11 +1,11 @@
 <h1><%= station.name %></h1>
 
-<h2>Zone <%= station.zone %></h2>
+<h2>Zone <%= station.zones %></h2>
 
 <h3>Lines</h3>
 <p><%= station.lines %></p>
 
-<h4>Comments</h4>
+<h3>Comments</h3>
 
 <form action="/stations/<%= station._id %>" method="post">
   <input type="text" name="body">
@@ -15,7 +15,7 @@
 <ul>
   <% station.comments.forEach(comment => { %>
     <li>
-      <h5><a href="/users/<%= comment.user._id %>"><%= comment.user.firstname %> <%= comment.user.lastname %></a></h5>
+      <h7><a href="/users/<%= comment.user._id %>"><%= comment.user.firstname %> <%= comment.user.lastname %></a> on <%= comment.timeCreated %></h7>
       <p><%= comment.body %></p>
 
       <% if (comment.user.id === locals.user.id || station.createdBy.id === locals.user.id ) { %>
