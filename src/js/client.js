@@ -7,6 +7,7 @@ $(document).ready(function(){
 
   var startPoint;
   var endPoint;
+  var url;
 
 
   $('#journeydets').submit(function(e) {
@@ -16,10 +17,12 @@ $(document).ready(function(){
 
     console.log(startPoint, endPoint);
 
-    $.
-    get('https://api.tfl.gov.uk/Journey/JourneyResults/${startPoint}/to/${endPoint}')
-    .then(data => {
-      console.log(data);
-    });
+    url = $.
+    get('https://api.tfl.gov.uk/Journey/JourneyResults/' + startPoint + '/to/' + endPoint + '?app_id=fedc9052&app_key=7944db1b32e1272d7c66fb54d54314f4');
+    console.log(url);
+
+    // .then(data => {
+    //   console.log(data);
+    // });
   });
 });
