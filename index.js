@@ -11,6 +11,7 @@ const { port, db, secret }   = require('./config/env');
 const routes         = require('./config/routes');
 const User           = require('./models/user');
 const Station        = require('./models/station');
+const Journey        = require('./models/journey');
 const app            = express();
 
 mongoose.connect(db);
@@ -53,7 +54,7 @@ app.use((req, res, next) => {
       req.session.userId = user._id;
       req.user = user;
 
-      res.locals.user = user;
+      res.locals.loggedInUser = user;
       res.locals.isLoggedIn = true;
 
       next();

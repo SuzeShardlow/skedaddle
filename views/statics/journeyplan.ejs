@@ -16,9 +16,22 @@
   <% }) %>
 </div>
 
-
 <form id="journeydets">
-  <input type="text" class="location" id="origin" placeholder="Travel from">
-  <input type="text" class="location" id="destination" placeholder="Travel to">
+  Travel from:
+  <select id="origin" name="origin">
+    <% stations.forEach((station) => { %>
+      <option value="<%= station.icsCode %>"><%= station.name %></option>
+    <% }) %>
+  </select>
+  to:
+  <select id="destination" name="destination">
+    <% stations.forEach((station) => { %>
+      <option value="<%= station.icsCode %>"><%= station.name %></option>
+    <% }) %>
+  </select>
+
   <input type="submit" value="See your options">
 </form>
+
+<div id="journeyresults">
+</div>

@@ -1,5 +1,5 @@
-<nav class="navbar fixed-top navbar-toggleable-md navbar-light bg-faded">
-  <div class="container">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <div class="container fluid">
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,8 +19,8 @@
           <li class="nav-item">
             <a class="nav-link" href="/logout">Logout</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logged in as <%= locals.user.firstname %> <%= locals.user.lastname %></a>
+          <li class="nav-item navbar-right">Logged in as 
+            <a class="nav-link" href="/users/<%= loggedInUser._id %>"><%= locals.loggedInUser.firstname %> <%= locals.loggedInUser.lastname %></a> <a class="nav-link" href="/logout">(Not <%= locals.loggedInUser.firstname %>?)</a>
           </li>
         <% } else { %>
           <li class="nav-item">

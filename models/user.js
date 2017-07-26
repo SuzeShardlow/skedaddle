@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
   lastname: { type: String },
   username: { type: String },
   email: { type: String, required: true },
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  savedJourneys: [{ type: mongoose.Schema.ObjectId, ref: 'Journey' }]
 });
 
 userSchema.pre('save', function hashPassword(next) {

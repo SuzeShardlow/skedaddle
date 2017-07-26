@@ -4,6 +4,7 @@ const Station = require('../models/station');
 function usersShow(req, res) {
   User
     .findById(req.params.id)
+    .populate('savedJourneys')
     .exec()
     .then(user => {
       Station

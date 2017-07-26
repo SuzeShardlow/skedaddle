@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const Station = require('../models/station');
 
 function staticsHomepage(req, res) {
   User
@@ -8,10 +9,19 @@ function staticsHomepage(req, res) {
 }
 
 function staticsJourneyPlan(req, res) {
-  User
+  Station
     .find()
     .exec()
-    .then((users) => res.render('statics/journeyplan', { users }));
+    .then((stations) => {
+      // var stations = stat.sort(function(a, b) {
+      //   return a.name - b.name;
+      // });
+      // console.log(stations);
+      User
+        .find()
+        .exec()
+        .then((users) => res.render('statics/journeyplan', { stations, users}))
+    });
 }
 
 

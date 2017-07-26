@@ -10,9 +10,11 @@ const stationSchema = new mongoose.Schema({
   name: { type: String, required: true },
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
-  lines: [{ type: Array }],
-  naptan: [{ type: String }],
+  lines: { type: Array, required: true },
+  naptan: { type: String, required: true },
   zones: { type: Array, required: true },
+  icsCode: { type: String, required: true },
+  streetAddress: { type: String },
   comments: [commentSchema],
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });

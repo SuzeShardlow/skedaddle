@@ -8,6 +8,7 @@ const registrations = require('../controllers/registrations');
 const stations      = require('../controllers/stations');
 const users         = require('../controllers/users');
 const comments      = require('../controllers/comments');
+const journeys      = require('../controllers/journeys');
 
 function secureRoute(req, res, next) {
   if (!req.session.userId) {
@@ -28,7 +29,8 @@ router.route('/stations')
   .post(secureRoute, stations.create);
 
 router.route('/journeyplan')
-  .get(statics.journeyplan);
+  .get(statics.journeyplan)
+  .post(journeys.create);
 
 // router.route('/stations/new')
 //   .get(secureRoute, stations.new);
@@ -44,6 +46,9 @@ router.route('/stations/:id')
 
 router.route('/stations/:stationId/comments/:commentId')
   .delete(comments.delete);
+  
+router.route('/users/:userId/journeys/:journeyId')
+  .delete(journeys.delete);
 
 router.route('/register')
   .get(registrations.new)
