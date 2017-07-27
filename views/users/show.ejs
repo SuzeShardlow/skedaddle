@@ -21,7 +21,7 @@
         <ul>
         <li><%= journey.createdBy %></li>
         </ul>
-        <form method="post" action="/users/<%= user._id %>/journeys/<% journey._id %>">
+        <form method="post" action="/users/journeys/<%= journey._id %>">
           <input type="hidden" name="_method" value="delete">
           <button class="btn btn-danger">Delete</button>
         </form>

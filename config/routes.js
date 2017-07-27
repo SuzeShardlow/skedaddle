@@ -29,8 +29,8 @@ router.route('/stations')
   .post(secureRoute, stations.create);
 
 router.route('/journeyplan')
-  .get(statics.journeyplan)
-  .post(journeys.create);
+  .get(secureRoute, statics.journeyplan)
+  .post(secureRoute, journeys.create);
 
 // router.route('/stations/new')
 //   .get(secureRoute, stations.new);
@@ -46,9 +46,6 @@ router.route('/stations/:id')
 
 router.route('/stations/:stationId/comments/:commentId')
   .delete(comments.delete);
-  
-router.route('/users/:userId/journeys/:journeyId')
-  .delete(journeys.delete);
 
 router.route('/register')
   .get(registrations.new)
@@ -63,6 +60,9 @@ router.route('/logout')
 
 router.route('/users/:id')
   .get(users.show);
+
+router.route('/users/journeys/:journeyId')
+  .delete(secureRoute, journeys.delete);
 
 
 module.exports = router;

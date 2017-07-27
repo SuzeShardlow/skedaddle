@@ -4,36 +4,64 @@
 <ul>
   <% station.zones.forEach(zone => { %>
     <li><%= zone %></li>
-  <% }) %>
-</ul>
+    <% }) %>
+  </ul>
 
-<h3>Lines</h3>
-<ul>
-  <% station.lines.forEach(line => { %>
-    <li><%= line.name %></li>
-  <% }) %>
-</ul>
+  <h3>Lines</h3>
+  <ul>
+    <% station.lines.forEach(line => { %>
+      <li><%= line.name %></li>
+      <% }) %>
+    </ul>
 
-<h3>Comments</h3>
+    <style>
+    #map {
+      height: 300px;
+      width: 300px
+    }
+    </style>
 
-<form action="/stations/<%= station._id %>" method="post">
-  <input type="text" name="body">
-  <input type="submit" value="Post Comment">
-</form>
+    <div id="map"></div>
 
-<ul>
-  <% station.comments.forEach(comment => { %>
-    <li>
-      <h7><a href="/users/<%= comment.user._id %>">
-      <%= comment.user.firstname %> <%= comment.user.lastname %></a> on <%= comment.timeCreated %></h7>
-      <p><%= comment.body %></p>
+    <script>
+    function initMap() {
 
-      <% if (comment.user.id === locals.loggedInUser.id) { %>
-        <form action="/stations/<%= station._id %>/comments/<%= comment._id %>" method="post">
+      let LatLng = { lat: <%= station.latitude %>, lng: <%= station.longitude %> };
+
+      let map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 15,
+        center: LatLng
+      });
+
+      let marker = new google.maps.Marker({
+        position: LatLng,
+        map: map,
+        title: '<%= station.name %>'
+      });
+    }
+    </script>
+
+
+    <h3>Comments</h3>
+
+    <form action="/stations/<%= station._id %>" method="post">
+      <input type="text" name="body">
+      <input type="submit" value="Post Comment">
+    </form>
+
+    <ul>
+      <% station.comments.forEach(comment => { %>
+        <li>
+        <h7><a href="/users/<%= comment.user._id %>">
+        <%= comment.user.firstname %> <%= comment.user.lastname %></a> on <%= comment.timeCreated %></h7>
+        <p><%= comment.body %></p>
+
+        <% if (comment.user.id === locals.loggedInUser.id) { %>
+          <form action="/stations/<%= station._id %>/comments/<%= comment._id %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <input class="btn btn-danger" type="submit" value="Delete Comment">
-        </form>
-      <% } %>
-    </li>
-  <% }) %>
-</ul>
+          </form>
+          <% } %>
+          </li>
+          <% }) %>
+        </ul>

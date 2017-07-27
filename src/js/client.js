@@ -2,14 +2,10 @@ $(document).ready(function(){
 
   $('.location').click = this.value = '';
 
-
   console.log('client log!');
 
   var startPoint;
   var endPoint;
-
-
-  
 
   $('#journeydets').submit(function(e) {
     const fixStationName = function(stationName) {
@@ -44,15 +40,15 @@ $(document).ready(function(){
           }
 
           let journeyHtml = `
-            <div>
-              <hr>
-              <p>${journey.legs.length} legs, ${journey.duration} minutes, departing ${journey.startDateTime}, arriving ${journey.arrivalDateTime}:</p>
-              <ul>
-                ${legsHtml}
-              </ul>
-              <button class="saveJourney">Save</button>
-            </div>
-            `;
+          <div>
+          <hr>
+          <p>${journey.legs.length} legs, ${journey.duration} minutes, departing ${journey.startDateTime}, arriving ${journey.arrivalDateTime}:</p>
+          <ul>
+          ${legsHtml}
+          </ul>
+          <button class="saveJourney">Save</button>
+          </div>
+          `;
           $('#journeyresults').append(journeyHtml);
         }
       }
@@ -80,4 +76,5 @@ $(document).ready(function(){
       });
     }
   });
+
 });
