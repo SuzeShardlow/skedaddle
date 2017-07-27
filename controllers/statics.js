@@ -2,10 +2,18 @@ const User = require('../models/user');
 const Station = require('../models/station');
 
 function staticsHomepage(req, res) {
-  User
-    .find()
-    .exec()
-    .then((users) => res.render('statics/homepage', { users }));
+  if (req.session.userId) {
+    // Someone is logged in, find their user info
+    User
+      .findById(req.session.userId)
+      .exec()
+      .then((user) => {
+        res.render('statics/homepage', {user});
+      });
+  } else {
+    // Render the page with no users?
+    res.render('statics/homepage');
+  }
 }
 
 function staticsJourneyPlan(req, res) {

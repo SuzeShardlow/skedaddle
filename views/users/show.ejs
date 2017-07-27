@@ -1,7 +1,6 @@
 <h1><%= user.firstname %> <%= user.lastname %></h1>
 <h2><%= user.username %></h2>
 <h2><%= user.email %></h2>
-<%= user.savedJourneys %>
 <h3>Stations</h3>
 <ul>
   <% stations.forEach(station => { %>
@@ -11,19 +10,20 @@
 
   <h3>Journeys</h3>
   <ul>
+
     <% user.savedJourneys.forEach(journey => { %>
+      <% if (journey.journeyDetails) { %>
       <li><%= journey.journeyInfo %></li>
       <ul>
       <% for (var i = 0; i < journey.journeyDetails.length; i++) { %>
         <li><%= journey.journeyDetails[i] %></li>
         <% } %>
         </ul>
-        <ul>
-        <li><%= journey.createdBy %></li>
-        </ul>
-        <form method="post" action="/users/journeys/<%= journey._id %>">
+        <form method="post" action="/users/<%= user._id %>/journeys/<%= journey._id %>">
           <input type="hidden" name="_method" value="delete">
           <button class="btn btn-danger">Delete</button>
         </form>
+          <%  } %>
         <% }); %>
+
       </ul>

@@ -1,17 +1,26 @@
-<h1>Homepage</h1>
+<body id="homepage">
 
-<div class="row">
-  <% users.forEach((user) => { %>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-block">
-          <h4 class="card-title"><a href="/users/<%= user._id %>"><%= user.username %></a></h4>
-          <p class="card-text">
-            <%= user.email %>
-            <%= user.password %>
-          </p>
-        </div>
+  <h1>Homepage</h1>
+
+
+  <div class="row">
+    <% if (typeof(user) === 'undefined') { %>
+      <div class="col-md-4">
+      <p>Please log in!</p>
       </div>
-    </div>
-  <% }) %>
-</div>
+      <% } else { %>
+        <div class="col-md-4">
+        <div class="card">
+        <div class="card-block">
+        <h4 class="card-title"><a href="/users/<%= user._id %>"><%= user.username %></a></h4>
+        <p class="card-text">
+        <%= user.email %>
+        <%= user.password %>
+        </p>
+        </div>
+        </div>
+        </div>
+        <% } %>
+  </div>
+
+</body>

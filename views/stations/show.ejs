@@ -14,14 +14,13 @@
       <% }) %>
     </ul>
 
-    <style>
-    #map {
-      height: 300px;
-      width: 300px
-    }
-    </style>
-
-    <div id="map"></div>
+        <div class="card">
+          <h3 class="card-header">Location</h3>
+          <div class="card-block">
+            <div id="map">
+            </div>
+          </div>
+        </div>
 
     <script>
     function initMap() {
@@ -30,13 +29,76 @@
 
       let map = new google.maps.Map(document.getElementById('map'), {
         zoom: 15,
-        center: LatLng
+        center: LatLng,
+        clickableIcons: false
       });
 
       let marker = new google.maps.Marker({
         position: LatLng,
         map: map,
         title: '<%= station.name %>'
+      });
+
+      setInterval(initArrivals('<%= station.naptan %>'), 3000);
+    }
+
+    function initArrivals(stationNaptan) {
+      // Go get arrivals for this station...
+      $.
+      get(`https://api.tfl.gov.uk/StopPoint/${stationNaptan}/Arrivals?mode=tube&app_id=fedc9052&app_key=7944db1b32e1272d7c66fb54d54314f4`)
+      .then(data => {
+        if (data) {
+          let arrivalsByPlatform = {};
+          for (let arrival of data) {
+            const destinationStation = arrival.destinationName || '*** Check front of train ***';
+            const minutes = Math.floor(arrival.timeToStation / 60);
+
+            if (! arrivalsByPlatform[arrival.platformName]) {
+              // First one for this platform so init an array for it
+              arrivalsByPlatform[arrival.platformName] = [];
+            }
+
+            arrivalsByPlatform[arrival.platformName].push({
+              minutes: minutes,
+              destinationStation: destinationStation.replace(' Underground Station', ''),
+              line: arrival.lineName
+            });
+
+            console.log(arrival);
+          }
+
+          let arrivalsHtml = '';
+
+          for (let platform in arrivalsByPlatform) {
+            arrivalsHtml += `<h4>${platform}</h4><ol>`;
+
+            // Sort by time
+            arrivalsByPlatform[platform].sort(function(a, b) {
+              if (a.minutes < b.minutes) {
+                return -1;
+              }
+
+              if (a.minutes > b.minutes) {
+                return 1;
+              }
+
+              return 0;
+            });
+
+            for (let arrival of arrivalsByPlatform[platform]) {
+              arrivalsHtml += `<li>
+
+              ${arrival.destinationStation} (${arrival.line}) - ${(arrival.minutes === 0 ? '*** Train approaching ***' : arrival.minutes)} min</li>`;
+            }
+
+            arrivalsHtml += '</ol>';
+          }
+
+          $('#arrivals').html(arrivalsHtml);
+
+        } else {
+          $('#arrivals').html('<p>Real time arrivals information is currently unavailable.');
+        }
       });
     }
     </script>
@@ -65,3 +127,10 @@
           </li>
           <% }) %>
         </ul>
+
+
+        <div class="card">
+          <h3 class="card-header">Arrivals</h3>
+          <div class="card-block" id="arrivals">
+          </div>
+        </div>

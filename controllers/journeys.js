@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Journey = require('../models/journey');
+const Station = require('../models/station');
 
 function journeysCreate(req, res) {
   console.log('HIT');
@@ -22,11 +23,37 @@ function journeysDelete(req, res) {
   .findById(req.params.userId)
   .exec()
   .then(user => {
-    const journey = user.journeys.id(req.params.journeyId);
-    journey.remove();
-    user.save();
-
-    res.redirect(`/users/${user._id}`);
+    console.log(user.savedJourneys);
+    var index = user.savedJourneys.indexOf(req.params.journeyId);
+    if (index > -1) {
+      user.savedJourneys.splice(index, 1);
+      // const journey = user.savedJourneys.find(req.params.journeyId);
+      // journey.remove();
+      user.save();
+    }
+    console.log(user);
+  })
+  .then(user => {
+    Station
+    .find({ createdBy: req.params.userId })
+    .exec()
+    .then(stations => {
+      return res.redirect(`/users/${req.params.userId}`);
+    });
+    // Journey.findByIdAndRemove(req.params.journeyId, function(data) {
+    //   console.log('hello');
+    //   console.log(data);
+    //   User
+    //   .findById(req.params.userId)
+    //   .exec()
+    //   .then(user => {
+    //     Station
+    //     .find({ createdBy: req.params.userId })
+    //     .exec()
+    //     .then(stations => {
+    //       res.render('users/show', { user, stations });
+    //     });
+    //   });
   });
 }
 

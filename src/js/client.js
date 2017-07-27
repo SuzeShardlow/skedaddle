@@ -53,7 +53,7 @@ $(document).ready(function(){
         }
       }
       console.log(data);
-      setTimeout(assignListeners, 2000);
+      setTimeout(assignListeners, 1000);
     });
 
     function assignListeners() {

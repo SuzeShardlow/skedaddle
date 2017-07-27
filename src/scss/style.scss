@@ -1,3 +1,54 @@
+@import "variables";
+
 body {
   background: #DBF9B8;
+  font-family: 'Raleway', sans-serif;
 }
+
+h1 {
+  font-weight: 800;
+}
+
+h3 {
+  font-weight: 800;
+}
+
+
+
+
+#map {
+  border-width: 5px solid black;
+  height: 300px;
+  width: 300px
+
+}
+#arrivals {
+background-color: black;
+
+h4 {
+  color: white;
+
+}
+
+li {
+  // font-family: 'Raleway Dots', sans-serif;
+  text-decoration: none;
+  color: orange;
+
+}
+
+}
+
+
+
+// &#homepage {
+//   background: url("https://tfl.gov.uk/cdn/static/cms/images/promos/tube-planned-works-edited-1_rdax_400x200.jpg") no-repeat top center fixed;
+//   background-size: cover;
+// }
+
+
+
+
+
+// font-family: 'Raleway', sans-serif;
+// font-family: 'Raleway Dots', cursive;

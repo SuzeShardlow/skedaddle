@@ -21,6 +21,21 @@ function secureRoute(req, res, next) {
   return next();
 }
 
+function loggedInUserOnlyRoute(req, res, next) {
+  if (! req.session.userId) {
+    // No user logged in, go home
+    res.redirect('/');
+  } else {
+    if (req.params.id == req.session.userId) {
+      // Logged in user requesting their own page
+      return next();
+    } else {
+      // Logged in user requesting another users page
+      res.redirect('/');
+    }
+  }
+}
+
 router.route('/')
   .get(statics.homepage);
 
@@ -59,9 +74,9 @@ router.route('/logout')
   .get(sessions.delete);
 
 router.route('/users/:id')
-  .get(users.show);
+  .get(secureRoute, loggedInUserOnlyRoute, users.show);
 
-router.route('/users/journeys/:journeyId')
+router.route('/users/:userId/journeys/:journeyId')
   .delete(secureRoute, journeys.delete);
 
 
