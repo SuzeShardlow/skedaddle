@@ -1,20 +1,5 @@
 <h1>Plan your journey</h1>
 
-<div class="row">
-  <% users.forEach((user) => { %>
-    <div class="col-md-4">
-      <div class="card">
-        <div class="card-block">
-          <h4 class="card-title"><a href="/users/<%= user._id %>"><%= user.firstname %> <%= user.lastname %> <%= user.username %></a></h4>
-          <p class="card-text">
-            <%= user.email %>
-            <%= user.password %>
-          </p>
-        </div>
-      </div>
-    </div>
-  <% }) %>
-</div>
 
 <form id="journeydets">
   Travel from:
@@ -30,7 +15,7 @@
     <% }) %>
   </select>
 
-  <input type="submit" value="See your options">
+  <input type="submit" class="btn btn-success btn-sm" value="See your options">
 </form>
 
 

@@ -1,35 +1,49 @@
-<nav class="container navbar navbar-toggleable-md navbar-light bg-faded">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="/">Skedaddle</a>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <div class="collapse navbar-collapse" id="collapse">
-      <ul class="navbar-nav mr-auto">
+  <a class="navbar-brand" href="/">Skedaddle</a>
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/stations">Stations</a>
+      </li>
+
+
+      <% if (locals.isLoggedIn) { %>
         <li class="nav-item">
-          <a class="nav-link" href="/stations">Stations</a>
+          <a class="nav-link" href="/journeyplan">Journey Planner</a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Log out</a>
+        </li>
+      </ul>
 
-        <% if (locals.isLoggedIn) { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/journeyplan">Journey Planner</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/logout">Logout</a>
-          </li>
-          <li class="nav-item navbar-right">Logged in as
-            <a class="nav-link" href="/users/<%= loggedInUser._id %>"><%= locals.loggedInUser.firstname %> <%= locals.loggedInUser.lastname %></a> <a class="nav-link" href="/logout">(Not <%= locals.loggedInUser.firstname %>?)</a>
-          </li>
+      <ul class="nav-link navbar-nav navbar-right">
+        <li class="nav-item loggedin">
+          <a href="/users/<%= loggedInUser._id %>">
+        Logged in as <%= locals.loggedInUser.firstname %> <%= locals.loggedInUser.lastname %>
+          </a>
+        </li>
+
+        <li class="nav-item loggedin">
+          <a class="nav-link" href="/logout">
+        (Not <%= locals.loggedInUser.firstname %>?)
+          </a>
+        </li>
+
         <% } else { %>
           <li class="nav-item">
-            <a class="nav-link" href="/login">Log In</a>
+          <a class="nav-link" href="/login">Log In</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/register">Create an account</a>
+          <a class="nav-link" href="/register">Create an account</a>
           </li>
-        <% } %>
-      </ul>
-    </div>
-  </div>
-</nav>
+          <% } %>
+          </ul>
+          </div>
+          </div>
+          </nav>

@@ -78,3 +78,57 @@ $(document).ready(function(){
   });
 
 });
+
+
+// Comments form code
+//
+// <h3>Comments</h3>
+//
+// <form action="/stations/<%= station._id %>" method="post">
+//   <input type="text" name="body">
+//   <input type="submit" value="Post Comment">
+// </form>
+//
+// <ul>
+//   <% station.comments.forEach(comment => { %>
+//     <li>
+//     <h7><a href="/users/<%= comment.user._id %>">
+//     <%= comment.user.firstname %> <%= comment.user.lastname %></a> on <%= comment.timeCreated %></h7>
+//     <p><%= comment.body %></p>
+//
+//     <% if (comment.user.id === locals.loggedInUser.id) { %>
+//       <form action="/stations/<%= station._id %>/comments/<%= comment._id %>" method="post">
+//       <input type="hidden" name="_method" value="delete">
+//       <input class="btn btn-danger" type="submit" value="Delete Comment">
+//       </form>
+//       <% } %>
+//       </li>
+//       <% }) %>
+//     </ul>
+
+
+// Edit and delete buttons
+// <a href="/stations/<%= station.id %>/edit" class="btn btn-primary">Edit</a>
+// <form method="POST" action="/stations/<%= station.id %>">
+//   <input type="hidden" name="_method" value="DELETE">
+//   <button class="btn btn-danger">Delete</button>
+// </form>
+
+
+// list users code from journey plan page
+//
+// <div class="row">
+//   <% users.forEach((user) => { %>
+//     <div class="col-md-4">
+//       <div class="card">
+//         <div class="card-block">
+//           <h4 class="card-title"><a href="/users/<%= user._id %>"><%= user.firstname %> <%= user.lastname %> <%= user.username %></a></h4>
+//           <p class="card-text">
+//             <%= user.email %>
+//             <%= user.password %>
+//           </p>
+//         </div>
+//       </div>
+//     </div>
+//   <% }) %>
+// </div>

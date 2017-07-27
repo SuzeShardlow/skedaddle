@@ -1,26 +1,46 @@
 <h1><%= station.name %></h1>
 
-<h3>Zones</h3>
-<ul>
-  <% station.zones.forEach(zone => { %>
-    <li><%= zone %></li>
-    <% }) %>
-  </ul>
+    <div class="row">
+        <div class="col-lg-5 col-sm-12">
+          <h3>Zones</h3>
+          <ul>
+            <% station.zones.forEach(zone => { %>
+              <li><%= zone %></li>
+              <% }) %>
+            </ul>
 
-  <h3>Lines</h3>
-  <ul>
-    <% station.lines.forEach(line => { %>
-      <li><%= line.name %></li>
-      <% }) %>
-    </ul>
-
-        <div class="card">
-          <h3 class="card-header">Location</h3>
-          <div class="card-block">
-            <div id="map">
-            </div>
-          </div>
+            <h3>Lines</h3>
+            <ul>
+              <% station.lines.forEach(line => { %>
+                <li><%= line.name %></li>
+                <% }) %>
+              </ul>
+              <section class="col-lg-3 col-sm-12">
+                <div class="row">
+                  <div class="card card-outline-primary">
+                    <h3 class="card-header">Location</h3>
+                    <div class="card-block col-lg-12 col-sm-12">
+                      <div id="map">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
         </div>
+        <div class="col-lg-7 col-sm-12">
+          <aside class="col-lg-12 col-sm-12">
+            <div id="board" class="card card-outline-info">
+              <h3 class="card-header">Live Arrivals</h3>
+              <div class="card-block">
+                <div id="arrivals">
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+
+
 
     <script>
     function initMap() {
@@ -102,35 +122,3 @@
       });
     }
     </script>
-
-
-    <h3>Comments</h3>
-
-    <form action="/stations/<%= station._id %>" method="post">
-      <input type="text" name="body">
-      <input type="submit" value="Post Comment">
-    </form>
-
-    <ul>
-      <% station.comments.forEach(comment => { %>
-        <li>
-        <h7><a href="/users/<%= comment.user._id %>">
-        <%= comment.user.firstname %> <%= comment.user.lastname %></a> on <%= comment.timeCreated %></h7>
-        <p><%= comment.body %></p>
-
-        <% if (comment.user.id === locals.loggedInUser.id) { %>
-          <form action="/stations/<%= station._id %>/comments/<%= comment._id %>" method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input class="btn btn-danger" type="submit" value="Delete Comment">
-          </form>
-          <% } %>
-          </li>
-          <% }) %>
-        </ul>
-
-
-        <div class="card">
-          <h3 class="card-header">Arrivals</h3>
-          <div class="card-block" id="arrivals">
-          </div>
-        </div>

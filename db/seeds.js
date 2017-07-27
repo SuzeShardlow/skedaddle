@@ -150,7 +150,7 @@ User
 
     {name:'Canons Park',latitude:51.607701,longitude:-0.294693,lines:[{id:'jubilee',name:'Jubilee'}],naptan:'940GZZLUCPK',zones:['5'],streetAddress:'Canons Park Station,London Underground Ltd.,Whitchurch Lane,Edgware,Middx,HA8 6RN',icsCode:'1000041'},
 
-    {name:'Chalfont & Latimer',latitude:51.667985,longitude:-0.560689,lines:[{id:'metropolitan',name:'Metropolitan'}],naptan:'940GZZLUCAL',zones:['8'],streetAddress:'Chalfont & Latimer Station,London Underground Ltd.,Station Approach,Little Chalfont,Amersham,Bucks,HP7 9PR',icsCode:'1000042'},
+    {name:'Chalfont and Latimer',latitude:51.667985,longitude:-0.560689,lines:[{id:'metropolitan',name:'Metropolitan'}],naptan:'940GZZLUCAL',zones:['8'],streetAddress:'Chalfont & Latimer Station,London Underground Ltd.,Station Approach,Little Chalfont,Amersham,Bucks,HP7 9PR',icsCode:'1000042'},
 
     {name:'Chalk Farm',latitude:51.544118,longitude:-0.153388,lines:[{id:'northern',name:'Northern'}],naptan:'940GZZLUCFM',zones:['2'],streetAddress:'Chalk Farm Station,London Underground Ltd.,Adelaide Rd,London,NW3 2BP',icsCode:'1000043'},
 
@@ -278,13 +278,15 @@ User
 
     {name:'Heathrow Terminals 1-2-3 ',latitude:51.471235,longitude:-0.452265,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUHRC',zones:['6'],streetAddress:'Heathrow Terminals 1, 2, 3,London Underground Ltd.,Wellington Road,Hounslow,Middlesex,TW6 1JH',icsCode:'1000105'},
 
-    {name:'Heathrow Terminal 4',latitude:51.458524,longitude:-0.445771,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUHR4',zones:['6'],streetAddress:'Heathrow T4 Station,London Underground Ltd.,Hthrw Airport complex,Trmnl 4,Hounslow,Middx',icsCode:'1000104'},
+    {name:'Heathrow Terminal 4',latitude:51.458524,longitude:-0.445771,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUHR4',zones:['6'],streetAddress:'Heathrow T4 Station,London Underground Ltd.,Hthrw Airport Complex,Trmnl 4,Hounslow,Middx',icsCode:'1000104'},
 
-    {name:'Heathrow Terminal 5',latitude:51.470052,longitude:-0.49056,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUHR5',zones:['6'],streetAddress:'Heathrow T5 Station,London Underground Ltd.,Hthrw Airport complex,Trmnl 5,Hounslow,Middx',icsCode:'1016430'},
+    {name:'Heathrow Terminal 5',latitude:51.470052,longitude:-0.49056,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUHR5',zones:['6'],streetAddress:'Heathrow T5 Station,London Underground Ltd.,Hthrw Airport Complex,Trmnl 5,Hounslow,Middx',icsCode:'1016430'},
 
     {name:'Hendon Central',latitude:51.583301,longitude:-0.226424,lines:[{id:'northern',name:'Northern'}],naptan:'940GZZLUHCL',zones:['3','4'],streetAddress:'Hendon Central Station,London Underground Ltd.,Queens Rd,London,NW4 3AS',icsCode:'1000106'},
 
     {name:'High Barnet',latitude:51.650541,longitude:-0.194298,lines:[{id:'northern',name:'Northern'}],naptan:'940GZZLUHBT',zones:['5'],streetAddress:'High Barnet Station,London Underground Ltd.,Barnet Hill,Barnet,Herts,EN5 5RP',icsCode:'1000107'},
+
+    {name:'Highbury and Islington',latitude:51.54502,longitude:-0.10752,lines:[{id:'victoria',name:'Victoria'}],naptan:'940GZZLUHAI',zones:['2'],streetAddress:'Highbury & Islington Underground Station, London ,Underground Ltd., Holloway Rd, London, N5 1RA',icsCode:'1000108'},
 
     {name:'High Street Kensington',latitude:51.501055,longitude:-0.192792,lines:[{id:'circle',name:'Circle'},{id:'district',name:'District'}],naptan:'940GZZLUHSK',zones:['1'],streetAddress:'High Street Kensington Station,London Underground Ltd.,Kensington High St,London,W8 5SA',icsCode:'1000110'},
 
@@ -414,7 +416,7 @@ User
 
     {name:'Paddington',latitude:51.516581,longitude:-0.175689,lines:[{id:'bakerloo',name:'Bakerloo'},{id:'circle',name:'Circle'},{id:'district',name:'District'}],naptan:'940GZZLUPAC',zones:['1'],streetAddress:'Paddington Underground Stations,London Underground Ltd.,Praed St,London,W2',icsCode:'1000174'},
 
-    {name:'Paddington (Hammersmith and City Line)-Underground',latitude:51.518187,longitude:-0.178306,lines:[{id:'hammersmith-city',name:'Hammersmith & City'},{id:'circle',name:'Circle'}],naptan:'940GZZLUPAH',zones:['1'],icsCode:'1000175'},
+    {name:'Paddington (Hammersmith and City Line)',latitude:51.518187,longitude:-0.178306,lines:[{id:'hammersmith-city',name:'Hammersmith & City'},{id:'circle',name:'Circle'}],naptan:'940GZZLUPAH',zones:['1'],icsCode:'1000175'},
 
     {name:'Park Royal',latitude:51.527123,longitude:-0.284341,lines:[{id:'piccadilly',name:'Piccadilly'}],naptan:'940GZZLUPKR',zones:['3'],streetAddress:'Park Royal Station,London Underground Ltd.,Western Avenue,London,W5 3EL',icsCode:'1000176'},
 

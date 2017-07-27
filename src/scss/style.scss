@@ -1,28 +1,46 @@
 @import "variables";
 
 body {
-  background: #DBF9B8;
+  // background: #DBF9B8;
   font-family: 'Raleway', sans-serif;
+
 }
 
 h1 {
   font-weight: 800;
 }
 
+// #homepagetitle {
+//   font-size: 50;
+// }
+
+}
+
 h3 {
   font-weight: 800;
 }
 
+// #homepage {
+//   background-image: url("http://news.images.itv.com/image/file/749326/stream_img.jpg");
+//   background-repeat: no-repeat;
+//   background-size: cover
+// }
 
+.jumbotron {
+  background-image: url(http://news.images.itv.com/image/file/749326/stream_img.jpg);
+  background-position: center;
+  background-size: cover
+}
 
 
 #map {
-  border-width: 5px solid black;
+  // display: block;
+  // margin: 0 auto;
   height: 300px;
-  width: 300px
-
+  width: 300px;
+  // align-self: center
 }
-#arrivals {
+#board {
 background-color: black;
 
 h4 {
@@ -36,7 +54,13 @@ li {
   color: orange;
 
 }
+}
+// #board {
+//   background-color: black;
+// }
 
+.loggedin a {
+  display: inline;
 }
 
 
