@@ -8,9 +8,9 @@ function registrationsCreate(req, res) {
   User
     .create(req.body)
     .then(user => {
-      // req.flash('info', `Thanks for registering, ${user.firstname}!`);
-      res.redirect('/');
+      req.flash('info', `Thanks for registering, ${user.firstname}!`);
       req.sessions.userId = user._id;
+      res.redirect('/');
     })
     .catch((err) => {
       if (err.name === 'ValidationError') {

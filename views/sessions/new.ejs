@@ -1,12 +1,12 @@
-<h1>Login</h1>
+<h1>Log in</h1>
 
 <% if (locals.message) { %>
   <p><%= message %></p>
 <% } %>
 
-<form method="POST" action="/login">
+<form method="POST" action="/login" class="col-lg-5 col-sm-12">
   <div class="form-group">
-    <label for="email">Email</label>
+    <label for="email">E-mail address</label>
     <input type="text" name="email" id="email" class="form-control">
   </div>
   <div class="form-group">

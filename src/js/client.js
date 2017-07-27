@@ -46,7 +46,7 @@ $(document).ready(function(){
           <ul>
           ${legsHtml}
           </ul>
-          <button class="saveJourney">Save</button>
+          <button class="saveJourney btn btn-info">Save</button>
           </div>
           `;
           $('#journeyresults').append(journeyHtml);
@@ -132,3 +132,12 @@ $(document).ready(function(){
 //     </div>
 //   <% }) %>
 // </div>
+
+// show stations from user page
+//
+// <h3>Stations</h3>
+// <ul>
+//   <% stations.forEach(station => { %>
+//     <li><a href="/stations/<%= station._id %>"><%= station.name %></a></li>
+//     <% }); %>
+//   </ul>

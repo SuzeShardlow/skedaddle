@@ -1,7 +1,7 @@
 @import "variables";
 
 body {
-  // background: #DBF9B8;
+  background: #DBF9B8;
   font-family: 'Raleway', sans-serif;
 
 }
@@ -10,9 +10,10 @@ h1 {
   font-weight: 800;
 }
 
-// #homepagetitle {
-//   font-size: 50;
-// }
+#homepagetitle {
+  font-size: 50;
+  color: white
+}
 
 }
 
@@ -20,17 +21,23 @@ h3 {
   font-weight: 800;
 }
 
-// #homepage {
-//   background-image: url("http://news.images.itv.com/image/file/749326/stream_img.jpg");
-//   background-repeat: no-repeat;
-//   background-size: cover
-// }
-
-.jumbotron {
-  background-image: url(http://news.images.itv.com/image/file/749326/stream_img.jpg);
-  background-position: center;
+#homepage {
+  background-image: url("http://news.images.itv.com/image/file/749326/stream_img.jpg");
+  background-repeat: no-repeat;
   background-size: cover
 }
+
+i {
+  // vertical-align: middle;
+  // float: right;
+  // padding: 0 5px 0
+}
+
+// .jumbotron {
+//   background-image: url(http://news.images.itv.com/image/file/749326/stream_img.jpg);
+//   background-position: center;
+//   background-size: cover
+// }
 
 
 #map {
@@ -40,32 +47,34 @@ h3 {
   width: 300px;
   // align-self: center
 }
+
 #board {
-background-color: black;
+  background-color: black;
 
-h4 {
-  color: white;
+  h4 {
+    color: white;
 
+  }
+
+  li {
+    // font-family: 'Raleway Dots', sans-serif;
+    text-decoration: none;
+    color: orange;
+
+  }
 }
-
-li {
-  // font-family: 'Raleway Dots', sans-serif;
-  text-decoration: none;
-  color: orange;
-
-}
-}
-// #board {
-//   background-color: black;
-// }
 
 .loggedin a {
   display: inline;
 }
 
+.navbar-custom {
+  background-color: #0f006f;
+  border-color: #030033;
+}
 
 
-// &#homepage {
+// #homepage {
 //   background: url("https://tfl.gov.uk/cdn/static/cms/images/promos/tube-planned-works-edited-1_rdax_400x200.jpg") no-repeat top center fixed;
 //   background-size: cover;
 // }

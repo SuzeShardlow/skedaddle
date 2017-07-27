@@ -51,7 +51,7 @@ router.route('/journeyplan')
 //   .get(secureRoute, stations.new);
 
 router.route('/stations/:id')
-  .get(stations.show)
+  .get(secureRoute, stations.show)
   .post(secureRoute, comments.create)
   .put(secureRoute, stations.update)
   .delete(secureRoute, stations.delete);
