@@ -4,7 +4,7 @@
   <div class="col-lg-5 col-sm-12">
     <section class="col-lg-12 col-sm-12">
       <div class="row">
-        <div class="card card-spaced">
+        <div class="card card-spaced card-outline-success">
           <h3 class="card-header">Zones</h3>
           <div class="card-block col-lg-12 col-sm-12">
               <% station.zones.forEach(zone => { %>
@@ -12,7 +12,7 @@
                 <% }) %>
             </div>
           </div>
-          <div class="card card-spaced">
+          <div class="card card-spaced card-outline-success">
             <h3 class="card-header">Lines</h3>
             <div class="card-block col-lg-12 col-sm-12">
                 <% station.lines.forEach(line => { %>
@@ -39,7 +39,7 @@
       <div class="col-lg-7 col-sm-12">
         <aside class="col-lg-12 col-sm-12">
           <div id="board" class="card card-outline-info">
-            <h3 class="card-header">Live Arrivals</h3>
+            <h3 class="card-header">Live Arrivals (updates every five seconds)</h3>
             <div class="card-block">
               <div id="arrivals">
               </div>
