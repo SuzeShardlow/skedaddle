@@ -141,3 +141,27 @@ $(document).ready(function(){
 //     <li><a href="/stations/<%= station._id %>"><%= station.name %></a></li>
 //     <% }); %>
 //   </ul>
+
+// old homepage info
+//
+// <h1>Homepage</h1>
+// <div class="row">
+//   <% if (typeof(user) === 'undefined') { %>
+//     <div class="col-md-4">
+//     <p>Please log in!</p>
+//     </div>
+//     <% } else { %>
+//       <div class="col-md-4">
+//       <div class="card">
+//       <div class="card-block">
+//       <h4 class="card-title"><a href="/users/<%= user._id %>"><%= user.username %></a></h4>
+//       <p class="card-text">
+//       <%= user.email %>
+//       <%= user.password %>
+//       </p>
+//       </div>
+//       </div>
+//       </div>
+//       <% } %>
+// </div>
+// </div>

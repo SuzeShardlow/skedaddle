@@ -1,44 +1,32 @@
 @import "variables";
 
 body {
-  background: #DBF9B8;
+  // background: #DBF9B8;
   font-family: 'Raleway', sans-serif;
-
 }
-
 h1 {
   font-weight: 800;
-}
-
-#homepagetitle {
-  font-size: 50;
-  color: white
 }
 
 h3 {
   font-weight: 800;
 }
-
 #homepage {
-
-  background-image: src="../images/IMG_20170727_082044.jpg";
+  background-image: url("/images/IMG_20170727_082044.jpg");
   background-repeat: no-repeat;
-  background-size: cover
+  background-size: cover;
+  min-height: 650px;
 }
-
 i {
   // vertical-align: middle;
   // float: right;
   // padding: 0 5px 0
 }
-
 // .jumbotron {
 //   background-image: url(http://news.images.itv.com/image/file/749326/stream_img.jpg);
 //   background-position: center;
 //   background-size: cover
 // }
-
-
 #map {
   // display: block;
   // margin: 0 auto;
@@ -46,41 +34,27 @@ i {
   width: 300px;
   // align-self: center
 }
-
 #board {
   background-color: black;
-
   h4 {
     color: white;
-
   }
-
   li {
     // font-family: 'Raleway Dots', sans-serif;
     text-decoration: none;
     color: orange;
-
   }
 }
-
 .loggedin a {
   display: inline;
 }
-
 .navbar-custom {
   background-color: #0f006f;
   border-color: #030033;
 }
-
-
 // #homepage {
 //   background: url("https://tfl.gov.uk/cdn/static/cms/images/promos/tube-planned-works-edited-1_rdax_400x200.jpg") no-repeat top center fixed;
 //   background-size: cover;
 // }
-
-
-
-
-
 // font-family: 'Raleway', sans-serif;
 // font-family: 'Raleway Dots', cursive;
