@@ -52,6 +52,106 @@ i {
   background-color: #0f006f;
   border-color: #030033;
 }
+
+.bakerloo-line {
+  background-color: #996633;
+  color: #FFFFFF;
+  padding: 3px;
+}
+
+.central-line {
+  background-color: #CC3333;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.circle-line {
+  background-color: #FFCC00;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.district-line {
+  background-color: #006633;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.hammersmith-city-line {
+  background-color: #CC9999;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.jubilee-line {
+  background-color: #868F98;
+  color: #000000;
+  padding: 3px; 
+}
+
+.metropolitan-line {
+  background-color: #660066;
+  color: #FFFFFF;
+  padding: 3px;  
+}
+
+.northern-line {
+  background-color: #000000;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.piccadilly-line {
+  background-color: #000099;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.victoria-line {
+  background-color: #0099CC;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.waterloo-city-line {
+  background-color: #66CCCC;
+  color: #FFFFFF;
+  padding: 3px; 
+}
+
+.zone {
+  background-color: #000000;
+  color: #FFFFFF;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.no-arrivals {
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.card-spaced {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+#journeydets {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.station-list-card {
+  margin: 5px;
+}
+
+
+
 // #homepage {
 //   background: url("https://tfl.gov.uk/cdn/static/cms/images/promos/tube-planned-works-edited-1_rdax_400x200.jpg") no-repeat top center fixed;
 //   background-size: cover;
