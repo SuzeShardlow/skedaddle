@@ -19,6 +19,7 @@ I decided to create an app which helps people who use [Transport for London (TfL
 The requirements for our app were to:
 
 * Use **MongoDB**, **Express** and **Node.js** and therefore be **MEN stack**.
+* Use **EJS** templates.
 * Have **at least two RESTful resources**: one representing a user and one that represents the main resource of our app, for example books, films or restaurants.
 * Have **complete RESTful routes** for at least one of the resources, with **all CRUD actions**.
 * Include **relationships**: embedded or referenced.
