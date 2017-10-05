@@ -1,10 +1,12 @@
 {
-  "name": "node-test",
+  "name": "Skedaddle",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "postinstall": "gulp deploy"
+    "gulp": "gulp deploy",
+    "start": "node index.js",
+    "seeddb": "node db/seeds.js"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
