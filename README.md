@@ -4,11 +4,12 @@
 
 <img src="images/Unscramble app on Macbook.jpg"></img>
 
+
 ## Introduction
 
 I recently attended a 12-week web development immersive bootcamp.
 
-**For our second project, after four weeks of classes we were tasked to create our first full stack web application in just seven days.**
+**For our second project - after four weeks of classes - we were tasked to create our first full stack web application in just seven days.**
 
 I decided to create an app which helps people who use [Transport for London (TfL)](http://tfl.gov.uk) services.
 
@@ -31,23 +32,22 @@ We were also given some optional bonus tasks:
 * **Include data from an external API.**
 * Add **automated tests** for at least one of the RESTful resources.
 
-I love a challenge and I love bonus tasks.  I love real-time information and APIs even more.  So I jumped at the opportunity to incorporate live data from TfL in my app.
+I love a challenge and I love bonus tasks.  I love real-time information - especially travel information - and APIs even more.  So I jumped at the opportunity to incorporate live data from TfL in my app.
+
+I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up plenty of time to focus on pulling in and manipulating the API data.
 
 
+## The app
 
-To challenge myself and test my understanding of creating methods and functions and manipulating a DOM, I chose a game which was heavy on logic.
+I live in London and, if I can't walk or cycle somewhere, I use the Tube and buses as well as some National Rail services.
 
-I decided to digitise a toy I enjoyed playing with when I was a child - picture courtesy of Pinterest:
+I originally wanted to create an app which would allow the user to plan or define their route across as many service providers as needed, then save that route and receive status updates regarding their route.
 
-![Sliding tile toy](https://i.pinimg.com/originals/90/c0/14/90c014a120d166467668dd02e8c449a7.jpg)
+However, after looking at the available API data, I decided that this was far too complicated for a minimum viable product (MVP) given I only had seven days in which to get everything done.
 
-
-
-
-
+**I therefore decided to revisit the scope of the project.**  As TfL is the provider which delivers most of the journeys in Zones 1-3, I chose to focus on TfL, and create the same app as an MVP but have the status updates as a nice-to-have if I had time after reaching MVP.
 
 
-## The game
 
 The game board consists of 16 positions and 15 tiles in a 4x4 grid.  Depending on the mode, the tiles bear either a number or a letter.
 
