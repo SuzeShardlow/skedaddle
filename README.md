@@ -2,7 +2,7 @@
 
 [Try it here!](https://skedaddle-suze.herokuapp.com/)
 
-<img src="images/Unscramble app on Macbook.jpg"></img>
+<img src="images/Skedaddle wireframes.jpg"></img>
 
 
 ## Introduction
