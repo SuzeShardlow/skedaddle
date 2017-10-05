@@ -18,6 +18,7 @@ I decided to create an app which helps people who use [Transport for London (TfL
 
 The requirements for our app were to:
 
+* Use **MongoDB**, **Express** and **Node.js** and therefore be **MEN stack**.
 * Have **at least two RESTful resources**: one representing a user and one that represents the main resource of our app, for example books, films or restaurants.
 * Have **complete RESTful routes** for at least one of the resources, with **all CRUD actions**.
 * Include **relationships**: embedded or referenced.
@@ -34,47 +35,35 @@ We were also given some optional bonus tasks:
 
 I love a challenge and I love bonus tasks.  I love real-time information - especially travel information - and APIs even more.  So I jumped at the opportunity to incorporate live data from TfL in my app.
 
-I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up plenty of time to focus on pulling in and manipulating the API data.
+I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up valuable time to focus on pulling in and manipulating the API data.
 
 
 ## The app
 
 I live in London and, if I can't walk or cycle somewhere, I use the Tube and buses as well as some National Rail services.
 
-I originally wanted to create an app which would allow the user to plan or define their route across as many service providers as needed, then save that route and receive status updates regarding their route.
+One of the things I have wanted to do for a long time is create an app which would allow the user to plan or define their route across as many service providers as needed, then save that route and receive status updates regarding their route.
 
-However, after looking at the available API data, I decided that this was far too complicated for a minimum viable product (MVP) given I only had seven days in which to get everything done.
+However, after looking at the available API data, I decided that this was far too complicated for a minimum viable product (MVP) for this particular project, given I only had seven days in which to get everything done.
 
-**I therefore decided to revisit the scope of the project.**  As TfL is the provider which delivers most of the journeys in Zones 1-3, I chose to focus on TfL, and create the same app as an MVP but have the status updates as a nice-to-have if I had time after reaching MVP.
+I therefore decided that, as TfL is the provider which delivers most of the journeys in Zones 1-3, I would focus on the London Underground (LU) only, and create my original idea as an MVP but have the status updates as a nice-to-have if I had time after reaching MVP.
 
-
-
-The game board consists of 16 positions and 15 tiles in a 4x4 grid.  Depending on the mode, the tiles bear either a number or a letter.
-
-The aim of the game is to move the tiles around the board so that they appear in numerical or alphabetical order, with the empty space in the bottom right.
-
-Tiles can only be moved if they touch the empty space.
+Therefore, my MVP was to be an app where a user could create an account, log in, search for a journey and then save and delete the journey.
 
 
 ## Planning
 
 Before programming anything, I wrote some pseudocode describing what I needed to happen.  This helped me to break everything down into a set of small problems.  For example:
 
-* A 4x4 grid needs to appear on the screen.
-* Each position on the grid needs to be identified by an ID number.
-* A number tile needs to appear in 15 of the 16 positions.  Therefore create a set of grids and apply one of them to the game
-* Before the game starts and after each move, we need to compare the number on the tile with the position ID number.
-* If they match, then the tile is in the correct position and it must be shown in green.
-* If all the tiles are green, then the player has won and the game is over.
-* If they do not match, the tile is not in the correct position and it must be shown in red.
-* Listen for a click on a position in the grid.
-* When the user clicks on a tile, we must check to see if it is a tile that can be legally moved, ie see if it is touching the empty space.
-* If it is a legal move, then move the tile into the empty space.
-* If it is not a legal move, then trigger an animation on the space.
+* The user needs to be able to register an account by giving their e-mail address and a password.
+* Once logged in, they should be able to specify an origin station and a destination.
+* The app will take this information and make an AJAX request to the TfL API to gather the journey data.
+* The app will display this data to the user, who can then decide which journey(s) they wish to save.
+* The user can see a list of all their saved journeys and have a Delete button next to each one.
 
-From this, I determined the tasks I needed to undertake and plugged them into a Trello board to help me stay on track.
+I also drew up some wireframes using [Balsamiq](https://balsamiq.com/).  These helped me to plan out how many views I needed to create, and the general layout of each one:
 
-<img src="images/Unscramble Trello screen grab.jpg"></img>
+<img src="images/Skedaddle wireframes.jpg"></img>
 
 
 ## Build and Development
@@ -88,22 +77,26 @@ I also defined the start point combinations and created an array for each of the
 
 ## Challenges
 
-I had a strange feeling at the outset of this project that I could not just randomise the numbers 1-15, drop them into the game board and expect that game board to be solvable.  I tested this theory beforehand and I realised I was correct - some number combinations can never be solved.  Therefore I had to spend some time playing with different combinations to come up with a few which were solvable.
+I had already used the TfL API on a [Boris Bike project](https://github.com/SuzeShardlow/Boris_Bikes) so I knew it was challenging to work with.  There are thousands of endpoints, which is great, and there is a [testing tool](https://api.tfl.gov.uk/swagger/ui/index.html) on their website so you can see examples of the data you'll receive in response to various requests.  However, there is very little in the way of written documentation, and when I was using the API during my course the testing tool did not work properly.
 
-The modal was also a challenge because it was something we were not due to cover in class until much later in the course.
+I encountered the following additional challenges during this project:
+
+* When searching for journey data using the API, for example using the keyword "Westminster", one does not simply receive data relating to Westminster Underground Station.  The API returns information on any place with "Westminster" in its name.  Therefore, I was getting results including Westminster Gardens in Walthamstow.
+
+* While looking for the most relevant endpoints for my needs, I realised that each station had two unique identifier codes: a **naptanId** and an **icsCode**.  However, after much time spent experimenting I realised that only the **icsCode** could be used to interrogate certain API endpoints.
+
+To solve both these issues, I decided to seed the station data into my app and take the icsCode from there to make the AJAX requests for the real-time information.
+
+When bringing in the Google Maps API for each station's Show page, I used the latitude and longitude information for that station as the centre point for the map.  However, Google Maps shows all public transport hubs by default.  Therefore I needed to research a way to remove the default landmarks from the map so that my marker would be the only one shown.
 
 
 ## Bonus Functionality
 
-I actually found myself with some spare time at the end of the project week, so for a bonus I decided to create a second mode with letters instead of numbers, because the original game actually came as a pair of two toys - one with numbers and one with letters.
-
-I then added a countdown timer, giving the player two minutes to complete the game.
-
-I also added a counter for the number of moves the player had made.
+As well as the TfL API, I also brought in the Google Maps API to show the location of each station on its Show page.
 
 
 ## Future Developments
 
-When I created this game, we had not yet covered styling in any depth, so I would like to revisit it and make it responsive so it can be played on mobile phones.
+I would still love to bring other providers' information into this app so that users (especially in South London!!!) can plan their actual journey from end to end.
 
-I would also like to add more grid combinations.
+I would also love to bring in fare information to help people find the cheapest way of making their journey, as well as the quickest way.
