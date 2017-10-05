@@ -2,7 +2,7 @@
 
 [Try it here!](https://skedaddle-suze.herokuapp.com/)
 
-![macbook demo](images/Skedaddle%20app%20on%20Macbook.jpg)
+![Skedaddle live Tube arrival board](readme_images/Skedaddle-screen-grab.jpg)
 
 
 ## Introduction
@@ -64,7 +64,7 @@ Before programming anything, I wrote some pseudocode describing what I needed to
 
 I also drew up some wireframes using [Balsamiq](https://balsamiq.com/).  These helped me to plan out how many views I needed to create, and the general layout of each one:
 
-<img src="images/Skedaddle wireframes.jpg"></img>
+<img src="readme_images/Skedaddle wireframes.jpg"></img>
 
 
 ## Build and Development
