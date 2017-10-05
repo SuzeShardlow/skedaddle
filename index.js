@@ -37,6 +37,8 @@ app.use(session({
   saveUninitialized: false
 }));
 
+app.use(flash());
+
 app.use((req, res, next) => {
   if (!req.session.userId) return next();
 
@@ -60,8 +62,6 @@ app.use((req, res, next) => {
       next();
     });
 });
-
-app.use(flash());
 
 app.use(routes);
 app.listen(port, () => console.log(`Express up and running on port: ${port}`));

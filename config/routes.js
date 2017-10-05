@@ -37,47 +37,47 @@ function loggedInUserOnlyRoute(req, res, next) {
 }
 
 router.route('/')
-  .get(statics.homepage);
+.get(statics.homepage);
+
+router.route('/register')
+.get(registrations.new)
+.post(registrations.create);
+
+router.route('/login')
+.get(sessions.new)
+.post(sessions.create);
 
 router.route('/stations')
-  .get(stations.index)
-  .post(secureRoute, stations.create);
+.get(stations.index)
+.post(secureRoute, stations.create);
 
 router.route('/journeyplan')
-  .get(secureRoute, statics.journeyplan)
-  .post(secureRoute, journeys.create);
+.get(secureRoute, statics.journeyplan)
+.post(secureRoute, journeys.create);
 
 // router.route('/stations/new')
 //   .get(secureRoute, stations.new);
 
 router.route('/stations/:id')
-  .get(secureRoute, stations.show)
-  .post(secureRoute, comments.create)
-  .put(secureRoute, stations.update)
-  .delete(secureRoute, stations.delete);
+.get(secureRoute, stations.show)
+.post(secureRoute, comments.create)
+.put(secureRoute, stations.update)
+.delete(secureRoute, stations.delete);
 
 // router.route('/stations/:id/edit')
 //   .get(stations.edit);
 
 router.route('/stations/:stationId/comments/:commentId')
-  .delete(comments.delete);
-
-router.route('/register')
-  .get(registrations.new)
-  .post(registrations.create);
-
-router.route('/login')
-  .get(sessions.new)
-  .post(sessions.create);
+.delete(comments.delete);
 
 router.route('/logout')
-  .get(sessions.delete);
+.get(sessions.delete);
 
 router.route('/users/:id')
-  .get(secureRoute, loggedInUserOnlyRoute, users.show);
+.get(secureRoute, loggedInUserOnlyRoute, users.show);
 
 router.route('/users/:userId/journeys/:journeyId')
-  .delete(secureRoute, journeys.delete);
+.delete(secureRoute, journeys.delete);
 
 
 module.exports = router;

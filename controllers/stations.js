@@ -20,7 +20,12 @@ const lines = [
 function stationsIndex(req, res, next) {
   Station
     .find()
-    .then((stations) => res.render('stations/index', { stations }))
+    .then((stations) => {
+      for (let station of stations) {
+        console.log(station.name);
+      }
+      res.render('stations/index', { stations });
+    })
     .catch(next);
 }
 
