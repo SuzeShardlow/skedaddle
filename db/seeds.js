@@ -15,14 +15,7 @@ User
   firstname: 'Suze',
   lastname: 'Shardlow',
   username: 'sshardlow',
-  email: 'suze.shardlow1@gmail.com',
-  password: 'password',
-  passwordConfirmation: 'password'
-},{
-  firstname: 'test',
-  lastname: 'User',
-  username: 'test',
-  email: 'suzeplays@gmail.com',
+  email: 'suze@suze.com',
   password: 'password',
   passwordConfirmation: 'password'
 }])
