@@ -2,7 +2,7 @@
 
 [Try it here!](https://skedaddle-suze.herokuapp.com/)
 
-<img src="images/Skedaddle app on MacBook.jpg"></img>
+![macbook demo](images/Skedaddle%20app%20on%20Macbook.jpg)
 
 
 ## Introduction
