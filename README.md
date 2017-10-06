@@ -1,6 +1,6 @@
 # Skedaddle
 
-[Try it here!](https://skedaddle-suze.herokuapp.com/)
+[Try it here!](http://suzeshardlow.com/skedaddle)
 
 ![Skedaddle live Tube arrival board](readme_images/Skedaddle-screen-grab.jpg)
 
@@ -122,7 +122,7 @@ I decided that I wanted the appearance of the navbar to depend on whether or not
 
 The only things users can see if they are not logged into the app are the registration view, the login view and the list of London Underground stations.  All the other views (journey planner, station info etc) are locked down to logged-in users.
 
-To build out the journey planner, I first started by creating inputs for the user to state their origin and destination.  However, I soon realised that the TfL API tries to be helpful by sending responses relating to close matches to the parameters sent with the AJAX request.  (See the Challenges section for more details.)
+To build out the journey planner, I first started by creating inputs for the user to state their origin and destination.  However, I soon realised that the TfL API tries to be helpful by sending responses relating to close matches to the parameters sent with the AJAX request.  (See the [**Challenges**](#challenges) section for more details.)
 
 I therefore seeded the station data into the app:
 
@@ -150,15 +150,6 @@ Because of this, given that I now had station data seeded into my database, I de
 ```javascript
 $.get(`https://api.tfl.gov.uk/StopPoint/${station.naptan}/Arrivals`)
 ```
-
-
-
-
-This game was built using JavaScript to handle the logic (check legal moves, check if the tiles were in the correct positions etc) and jQuery to manipulate the DOM.  I used CSS for the styling.
-
-I defined the legal moves for each position on the grid and stored these in an array.
-
-I also defined the start point combinations and created an array for each of them (see [**Challenges**](#challenges)).
 
 
 ## Challenges
