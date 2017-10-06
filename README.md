@@ -64,7 +64,7 @@ Before programming anything, I wrote some pseudocode describing what I needed to
 
 I also drew up some wireframes using [Balsamiq](https://balsamiq.com/).  These helped me to plan out how many views I needed to create, and the general layout of each one:
 
-<img src="readme_images/Skedaddle wireframes.jpg"></img>
+![Skedaddle wireframes](readme_images/Skedaddle-wireframes.jpg)
 
 
 ## Build and Development
