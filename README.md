@@ -177,3 +177,5 @@ As well as the TfL API, I also brought in the Google Maps API to show the locati
 I would still love to bring other providers' information into this app so that users (especially in South London!!!) can plan their actual journey, across all modes of transport and all providers, from end to end.
 
 I would also love to bring in fare information to help people find the cheapest way of making their journey, as well as the quickest way.
+
+I am currently creating an Alexa skill for London Underground arrivals using the TfL API.
