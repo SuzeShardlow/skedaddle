@@ -178,4 +178,4 @@ I would still love to bring other providers' information into this app so that u
 
 I would also love to bring in fare information to help people find the cheapest way of making their journey, as well as the quickest way.
 
-I am currently creating an Alexa skill for London Underground arrivals using the TfL API.
+I am currently creating an [Alexa skill](https://github.com/SuzeShardlow/alexa_skill_skedaddle) for London Underground arrivals using the TfL API.
