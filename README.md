@@ -1,6 +1,6 @@
 # Skedaddle
 
-[Try it here!](http://suzeshardlow.com/skedaddle)
+[Try it here!](https://suze.dev/coding_projects/skedaddle/)
 
 ![Skedaddle live Tube arrival board](readme_images/Skedaddle-screen-grab.jpg)
 
