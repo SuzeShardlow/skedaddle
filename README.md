@@ -7,9 +7,7 @@
 
 ## Introduction
 
-I recently attended a 12-week web development immersive bootcamp.
-
-**For our second project - after four weeks of classes - we were tasked to create our first full stack web application in just seven days.**
+**After four weeks of learning JavaScript, I created my first full stack web application in just seven days.**
 
 I decided to create an app which helps people who use [Transport for London (TfL)](http://tfl.gov.uk) services.
 
