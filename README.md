@@ -149,7 +149,7 @@ $.get(`https://api.tfl.gov.uk/StopPoint/${station.naptan}/Arrivals`)
 
 ## Challenges
 
-I had already used the TfL API on a [Boris Bike project](https://github.com/SuzeShardlow/Boris_Bikes) so I knew it was challenging to work with.  There are thousands of endpoints, which is great, and there is a [testing tool](https://api.tfl.gov.uk/swagger/ui/index.html) on their website so you can see examples of the data you'll receive in response to various requests.  However, there is very little in the way of written documentation, and when I was using the API during my course the testing tool did not work properly.
+I had already used the TfL API on a [Boris Bike project](https://github.com/SuzeShardlow/Boris_Bikes) so I knew it was challenging to work with.  There are thousands of endpoints, which is great, and there is a [testing tool](https://api.tfl.gov.uk/swagger/ui/index.html) on their website so you can see examples of the data you'll receive in response to various requests.  However, there is very little in the way of written documentation, and when I was using the API to create my apps the testing tool did not work properly.
 
 I encountered the following additional challenges during this project:
 
