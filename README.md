@@ -34,7 +34,7 @@ I love a challenge.  I love real-time information - especially travel informatio
 I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early on, freeing up valuable time to focus on pulling in and manipulating the API data.
 
 
-## The app
+## The App
 
 I live in London and, if I can't walk or cycle somewhere, I use the Tube and buses as well as some National Rail services.
 
