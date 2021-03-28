@@ -12,7 +12,7 @@
 I decided to create an app which helps people who use [Transport for London (TfL)](http://tfl.gov.uk) services.
 
 
-## Tasks/competencies/skills
+## Tasks/Competencies/Skills
 
 The competencies and skills I demonstrate in this app are:
 
