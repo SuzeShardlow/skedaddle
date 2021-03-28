@@ -12,29 +12,26 @@
 I decided to create an app which helps people who use [Transport for London (TfL)](http://tfl.gov.uk) services.
 
 
-## Brief
+## Tasks/competencies/skills
 
-The requirements for our app were to:
+The competencies and skills I demonstrate in this app are:
 
-* Use **MongoDB**, **Express** and **Node.js** and therefore be **MEN stack**.
+* Use **MongoDB**, **Express** and **Node.js** and therefore create a **MEN stack** app.
 * Use **EJS** templates.
-* Have **at least two RESTful resources**: one representing a user and one that represents the main resource of our app, for example books, films or restaurants.
+* Include **at least two RESTful resources**: one representing a user and one that represents the main resource of the app.
 * Have **complete RESTful routes** for at least one of the resources, with **all CRUD actions**.
 * Include **relationships**: embedded or referenced.
 * Include **authentication** with **encrypted passwords** and an **authorisation flow**.
 * Design **wireframes** before building the app.
 * Have **semantically clean HTML** that makes structural sense rather than thinking about how the pages look.
 * Use **SCSS**.
-* Be **deployed online** and accessible to the **public**.
-
-We were also given some optional bonus tasks:
-
+* **Deployed the app online** so it's accessible to the **public**.
 * **Include data from an external API.**
 * Add **automated tests** for at least one of the RESTful resources.
 
-I love a challenge and I love bonus tasks.  I love real-time information - especially travel information - and APIs even more.  So I jumped at the opportunity to incorporate live data from TfL in my app.
+I love a challenge.  I love real-time information - especially travel information - and APIs even more.  So I jumped at the opportunity to incorporate live data from TfL in my app.
 
-I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early in the week, freeing up valuable time to focus on pulling in and manipulating the API data.
+I was comfortable with RESTful resources, the CRUD actions and user authentication so I knew I would be able to complete these functions early on, freeing up valuable time to focus on pulling in and manipulating the API data.
 
 
 ## The app
