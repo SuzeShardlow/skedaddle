@@ -56,6 +56,11 @@ $(document).ready(function(){
       setTimeout(assignListeners, 1000);
     });
 
+
+
+
+
+
     function assignListeners() {
       $('.saveJourney').on('click', function(e) {
         console.log('clicked');
